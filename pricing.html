@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing (preview) — OmniModi</title>
+  <meta name="description" content="Indicative OmniModi pricing. Final prices go live with the iOS and Android apps. Request a demo today.">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=chillax@600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===== PRICING PAGE SPECIFIC STYLES ===== */
+
+    /* Hero */
+    .pricing-hero {
+      padding: 9rem 0 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 900px 500px at 50% -100px, var(--purple-glow), transparent 70%),
+                  radial-gradient(ellipse 500px 400px at 90% 80%, rgba(0,212,170,0.08), transparent 70%);
+      pointer-events: none;
+    }
+    .pricing-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 1rem;
+      background: rgba(0,212,170,0.12);
+      border: 1px solid rgba(0,212,170,0.3);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--cyan);
+      margin-bottom: 1.75rem;
+      letter-spacing: 0.02em;
+    }
+    .pricing-hero h1 {
+      font-family: 'Chillax', 'General Sans', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.1rem;
+    }
+    .pricing-hero-sub {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.7;
+    }
+    .pricing-trust-pills {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.25rem;
+    }
+    .trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.85rem;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .trust-pill svg { flex-shrink: 0; }
+
+    /* ===== SECTION HEADER ===== */
+    .pricingsection { padding: 4rem 0; }
+    .pricingsection-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .pricingsection-header h2 {
+      font-family: 'Chillax', 'General Sans', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .pricingsection-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    .section-divider {
+      width: 48px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--purple-light), var(--cyan));
+      border-radius: 2px;
+      margin: 0.75rem auto 0;
+    }
+
+    /* ===== INDIVIDUAL PLAN CARDS ===== */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .plans-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+    }
+
+    .plan-card {
+      background: #1a1a2e;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2rem 1.75rem;
+      position: relative;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+    .plan-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+      border-color: rgba(124,58,237,0.4);
+    }
+    .plan-card.featured {
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 1px var(--cyan), 0 8px 40px rgba(0,212,170,0.12);
+    }
+    .plan-card.featured:hover {
+      box-shadow: 0 0 0 1px var(--cyan), 0 20px 60px rgba(0,212,170,0.2);
+    }
+
+    .plan-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.28rem 0.75rem;
+      border-radius: 20px;
+      margin-bottom: 1.25rem;
+    }
+    .plan-badge.default {
+      background: var(--bg-3);
+      color: var(--purple-light);
+    }
+    .plan-badge.popular {
+      background: var(--cyan);
+      color: #0a0a0f;
+    }
+
+    .plan-icon { font-size: 2rem; margin-bottom: 0.6rem; line-height: 1; }
+    .plan-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    .plan-tagline {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .plan-price-block { margin-bottom: 1.75rem; }
+    .plan-price {
+      font-family: 'Chillax', 'General Sans', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1;
+      color: #fff;
+    }
+    .plan-price-period {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .plan-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.75rem 0;
+    }
+    .plan-features li {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--bg-3);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+    .plan-features li:last-child { border-bottom: none; }
+    .plan-features li .check {
+      color: var(--cyan);
+      flex-shrink: 0;
+      margin-top: 0.05em;
+      font-style: normal;
+    }
+
+    .btn-teal {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 0.85rem 1.5rem;
+      background: linear-gradient(135deg, var(--cyan), #00a888);
+      color: #0a0a0f;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      text-decoration: none;
+    }
+    .btn-teal:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    .btn-outline-teal {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 0.85rem 1.5rem;
+      background: transparent;
+      color: var(--cyan);
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 10px;
+      border: 1.5px solid rgba(0,212,170,0.45);
+      cursor: pointer;
+      transition: border-color 0.2s ease, background 0.2s ease;
+      text-decoration: none;
+    }
+    .btn-outline-teal:hover {
+      border-color: var(--cyan);
+      background: rgba(0,212,170,0.06);
+    }
+
+    .plan-trial-note {
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 0.75rem;
+    }
+    .plan-trial-note strong { color: var(--purple-light); }
+
+    /* ===== FREE OPTIONS BANNER ===== */
+    .free-banner {
+      background: rgba(0,212,170,0.06);
+      border: 1px solid rgba(0,212,170,0.2);
+      border-radius: 14px;
+      padding: 1.25rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+    .free-option {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+    }
+    .free-option-icon { font-size: 1.2rem; }
+    .free-option-text { color: var(--text-muted); }
+    .free-option-code {
+      display: inline-block;
+      background: rgba(167,139,250,0.15);
+      color: var(--purple-light);
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 5px;
+      letter-spacing: 0.04em;
+    }
+    .free-divider {
+      width: 1px;
+      height: 36px;
+      background: var(--bg-3);
+    }
+    @media (max-width: 560px) { .free-divider { display: none; } }
+
+    /* ===== SCHOOL PLAN ===== */
+    .school-card {
+      background: #1a1a2e;
+      border: 2px solid var(--cyan);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 0 60px rgba(0,212,170,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    .school-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--cyan), var(--purple-light), var(--cyan));
+    }
+    .school-card-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    @media (max-width: 760px) {
+      .school-card-inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    .school-card-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--cyan);
+      margin-bottom: 0.75rem;
+    }
+    .school-card h2 {
+      font-family: 'Chillax', 'General Sans', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .school-card-sub {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.75rem;
+      line-height: 1.6;
+    }
+
+    .tier-table {
+      margin-bottom: 1.5rem;
+    }
+    .tier-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--bg-3);
+      font-size: 0.86rem;
+    }
+    .tier-row:last-child { border-bottom: none; }
+    .tier-label { color: var(--text-muted); }
+    .tier-price { font-weight: 700; color: #fff; }
+    .tier-price .per { font-size: 0.75rem; color: var(--text-muted); font-weight: 400; }
+
+    .school-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .school-features li {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--bg-3);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+    .school-features li:last-child { border-bottom: none; }
+    .school-features li .check { color: var(--cyan); flex-shrink: 0; }
+
+    /* Calculator */
+    .calculator {
+      background: rgba(0,0,0,0.25);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .calculator-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+      font-weight: 600;
+    }
+    .calc-input-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .calc-btn {
+      width: 36px;
+      height: 36px;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s ease;
+      flex-shrink: 0;
+    }
+    .calc-btn:hover { background: var(--border); }
+    .calc-input {
+      flex: 1;
+      background: var(--bg-3);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      font-family: 'General Sans', sans-serif;
+      text-align: center;
+      padding: 0.5rem;
+      -moz-appearance: textfield;
+    }
+    .calc-input::-webkit-outer-spin-button,
+    .calc-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+    .calc-input:focus {
+      outline: none;
+      border-color: var(--cyan);
+    }
+    .calc-slider {
+      width: 100%;
+      -webkit-appearance: none;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--border);
+      outline: none;
+      margin-bottom: 1.25rem;
+      cursor: pointer;
+    }
+    .calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--cyan);
+      cursor: pointer;
+      box-shadow: 0 0 6px rgba(0,212,170,0.5);
+    }
+    .calc-slider::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--cyan);
+      cursor: pointer;
+      border: none;
+    }
+
+    .calc-result {
+      background: rgba(0,212,170,0.07);
+      border: 1px solid rgba(0,212,170,0.2);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+    }
+    .calc-result-main {
+      font-family: 'Chillax', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--cyan);
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+    .calc-result-detail {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .calc-result-detail .highlight { color: var(--purple-light); font-weight: 600; }
+
+    .school-ctas {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .btn-school-primary {
+      display: block;
+      text-align: center;
+      padding: 0.95rem 1.5rem;
+      background: linear-gradient(135deg, var(--cyan), #00a888);
+      color: #0a0a0f;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      text-decoration: none;
+    }
+    .btn-school-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    .btn-school-secondary {
+      display: block;
+      text-align: center;
+      padding: 0.95rem 1.5rem;
+      background: transparent;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 10px;
+      border: 1.5px solid var(--border);
+      cursor: pointer;
+      transition: border-color 0.2s ease, color 0.2s ease;
+      text-decoration: none;
+    }
+    .btn-school-secondary:hover { border-color: var(--border); color: #fff; }
+
+    .school-min-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 0.75rem;
+      line-height: 1.5;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-grid {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--bg-3);
+    }
+    .faq-item:first-child { border-top: 1px solid var(--bg-3); }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 1.1rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      cursor: pointer;
+      font-family: 'General Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      transition: color 0.18s ease;
+    }
+    .faq-question:hover { color: var(--cyan); }
+    .faq-question[aria-expanded="true"] { color: var(--cyan); }
+
+    .faq-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--bg-3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      transition: transform 0.22s ease, background 0.18s ease;
+    }
+    .faq-question[aria-expanded="true"] .faq-icon {
+      background: rgba(0,212,170,0.15);
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s ease;
+    }
+    .faq-answer.open { max-height: 300px; }
+    .faq-answer-inner {
+      padding: 0 0 1.1rem 0;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .faq-answer-inner strong { color: var(--text); }
+    .faq-answer-inner code {
+      background: rgba(167,139,250,0.12);
+      color: var(--purple-light);
+      font-weight: 700;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.85em;
+      font-family: inherit;
+    }
+
+    /* ===== BOTTOM CTA ===== */
+    .pricing-cta-strip {
+      background: linear-gradient(135deg, #130a2a, #0a1a18);
+      border-top: 1px solid var(--bg-3);
+      border-bottom: 1px solid var(--bg-3);
+      padding: 4rem 0;
+      text-align: center;
+    }
+    .pricing-cta-strip h2 {
+      font-family: 'Chillax', 'General Sans', sans-serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .pricing-cta-strip p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    .pricing-cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== NAV ACTIVE ===== */
+    .nav-links a.nav-link-active {
+      color: var(--cyan) !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- COOKIE BANNER -->
+  <div class="cookie-banner" id="cookieBanner">
+    <p>We use session cookies only to keep the site working. No tracking, no ads. <a href="privacy.html">Privacy Policy</a></p>
+    <button onclick="document.getElementById('cookieBanner').classList.add('hidden')">Got it</button>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-label="OmniModi logo">
+          <rect width="36" height="36" rx="10" fill="var(--purple)"/>
+          <circle cx="12" cy="13" r="4" fill="white" opacity="0.9"/>
+          <circle cx="24" cy="13" r="4" fill="white" opacity="0.9"/>
+          <circle cx="18" cy="23" r="4" fill="white"/>
+          <line x1="12" y1="13" x2="18" y2="23" stroke="white" stroke-width="1.5" opacity="0.5"/>
+          <line x1="24" y1="13" x2="18" y2="23" stroke="white" stroke-width="1.5" opacity="0.5"/>
+          <line x1="12" y1="13" x2="24" y2="13" stroke="white" stroke-width="1.5" opacity="0.5"/>
+        </svg>
+        <span class="nav-logo-text">Omni<span class="nav-logo-accent">Modi</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#levels">Courses</a>
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#subjects">Subjects</a>
+        <a href="pricing.html" class="nav-link-active">Pricing</a>
+        <a href="terms.html">Terms</a>
+        <a href="index.html#demo" class="btn-nav">Request Demo →</a>
+      </div>
+      <button class="nav-burger" id="burger" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pricing-hero">
+    <div class="container">
+      <div class="pricing-hero-eyebrow fade-in" style="background:rgba(245,158,11,0.12);border-color:rgba(245,158,11,0.35);color:#f59e0b;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Preview — final prices land with the iOS and Android launch
+      </div>
+      <h1 class="fade-in">Indicative<br><span class="gradient-text">pricing.</span></h1>
+      <p class="pricing-hero-sub fade-in">These prices show where we&rsquo;re heading. OmniModi is currently in private demo &mdash; final billing goes live in the App Store and Google Play. Request a demo today.</p>
+      <div class="pricing-trust-pills fade-in">
+        <span class="trust-pill">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          14-day free trial
+        </span>
+        <span class="trust-pill">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          No VAT — prices are final
+        </span>
+        <span class="trust-pill">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Cancel anytime
+        </span>
+        <span class="trust-pill">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          3,500+ questions · 13 subjects
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDIVIDUAL PLANS -->
+  <section class="pricingsection" id="individual">
+    <div class="container">
+      <div class="pricingsection-header fade-in">
+        <h2>Individual plans</h2>
+        <p>One simple price for every role. Each plan is £3.99/month.</p>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="plans-grid fade-in">
+
+        <!-- STUDENT -->
+        <div class="plan-card featured">
+          <span class="plan-badge popular">Most popular</span>
+          <div class="plan-icon">🎓</div>
+          <div class="plan-title">Student</div>
+          <div class="plan-tagline">Everything a GCSE student needs to revise smarter and score higher.</div>
+          <div class="plan-price-block">
+            <div class="plan-price">£3.99</div>
+            <div class="plan-price-period">per month · cancel anytime</div>
+          </div>
+          <ul class="plan-features">
+            <li><i class="check">✓</i> All 3,500+ GCSE questions</li>
+            <li><i class="check">✓</i> 13 subjects · GCSE-aligned</li>
+            <li><i class="check">✓</i> Games zone & XP system</li>
+            <li><i class="check">✓</i> AI essay marking</li>
+            <li><i class="check">✓</i> Personal dashboard</li>
+            <li><i class="check">✓</i> Spaced repetition engine</li>
+            <li><i class="check">✓</i> Weak spot tracker & retests</li>
+            <li><i class="check">✓</i> Printable worksheets</li>
+          </ul>
+          <a href="index.html#demo" class="btn-teal">Request a demo →</a>
+          <p class="plan-trial-note">14 days free · use code <strong>TRIAL</strong> at signup</p>
+        </div>
+
+        <!-- PARENT -->
+        <div class="plan-card">
+          <span class="plan-badge default">Parent</span>
+          <div class="plan-icon">👨‍👩‍👧</div>
+          <div class="plan-title">Parent</div>
+          <div class="plan-tagline">See exactly where your child needs help — without sitting beside them.</div>
+          <div class="plan-price-block">
+            <div class="plan-price">£3.99</div>
+            <div class="plan-price-period">per month · cancel anytime</div>
+          </div>
+          <ul class="plan-features">
+            <li><i class="check">✓</i> Link up to 5 children</li>
+            <li><i class="check">✓</i> View each child's dashboard</li>
+            <li><i class="check">✓</i> Track progress over time</li>
+            <li><i class="check">✓</i> See weak areas by subject</li>
+            <li><i class="check">✓</i> Receive session summaries</li>
+            <li><i class="check">✓</i> Downloadable PDF reports</li>
+            <li><i class="check">✓</i> Link via 6-character code</li>
+          </ul>
+          <a href="index.html#demo" class="btn-outline-teal">Request a demo →</a>
+          <p class="plan-trial-note">Private preview — not yet in the app stores</p>
+        </div>
+
+        <!-- TEACHER -->
+        <div class="plan-card">
+          <span class="plan-badge default">Teacher</span>
+          <div class="plan-icon">👩‍🏫</div>
+          <div class="plan-title">Teacher</div>
+          <div class="plan-tagline">Professional tools for classroom management and student progress insight.</div>
+          <div class="plan-price-block">
+            <div class="plan-price">£3.99</div>
+            <div class="plan-price-period">per month · cancel anytime</div>
+          </div>
+          <ul class="plan-features">
+            <li><i class="check">✓</i> Teacher dashboard</li>
+            <li><i class="check">✓</i> Class management tools</li>
+            <li><i class="check">✓</i> Gap analysis by topic</li>
+            <li><i class="check">✓</i> Editable PDF reports</li>
+            <li><i class="check">✓</i> AI assistant for lesson prep</li>
+            <li><i class="check">✓</i> Printable worksheets + keys</li>
+            <li><i class="check">✓</i> All 13 subjects</li>
+          </ul>
+          <a href="index.html#demo" class="btn-outline-teal">Request a demo →</a>
+          <p class="plan-trial-note">Private preview — not yet in the app stores</p>
+        </div>
+
+      </div>
+
+      <!-- FREE OPTIONS -->
+      <div class="free-banner fade-in">
+        <div class="free-option">
+          <span class="free-option-icon">🆓</span>
+          <span class="free-option-text">14-day free trial — use code <span class="free-option-code">TRIAL</span> at signup</span>
+        </div>
+        <div class="free-divider"></div>
+        <div class="free-option">
+          <span class="free-option-icon">👨‍👩‍👧</span>
+          <span class="free-option-text">Free family access — use code <span class="free-option-code">FAMILY</span> (existing users only)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHOOL PLAN -->
+  <section class="pricingsection section-alt" id="schools">
+    <div class="container">
+      <div class="pricingsection-header fade-in">
+        <h2>School plan</h2>
+        <p>Volume pricing with free teacher accounts included. Minimum 30 students.</p>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="school-card fade-in">
+        <div class="school-card-inner">
+
+          <!-- Left: info + features -->
+          <div>
+            <div class="school-card-label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              School & Multi-Pupil
+            </div>
+            <h2>Per-student pricing.<br><span style="color:var(--cyan);">The more, the less.</span></h2>
+            <p class="school-card-sub">A tiered monthly model — your cost per student drops as you add more. Free teacher accounts auto-calculated at 1 per 30 students.</p>
+
+            <div class="tier-table">
+              <div class="tier-row">
+                <span class="tier-label">1–50 students</span>
+                <span class="tier-price">£1.99 <span class="per">/ student / month</span></span>
+              </div>
+              <div class="tier-row">
+                <span class="tier-label">51–150 students</span>
+                <span class="tier-price">£1.50 <span class="per">/ student / month</span></span>
+              </div>
+              <div class="tier-row">
+                <span class="tier-label">151+ students</span>
+                <span class="tier-price">£1.10 <span class="per">/ student / month</span></span>
+              </div>
+            </div>
+
+            <ul class="school-features">
+              <li><i class="check">✓</i> All features — no extras, no upsells</li>
+              <li><i class="check">✓</i> 1 free teacher account per 30 students</li>
+              <li><i class="check">✓</i> Teacher dashboards & class management</li>
+              <li><i class="check">✓</i> Gap analysis & editable PDF reports</li>
+              <li><i class="check">✓</i> All 3,500+ questions across 13 subjects</li>
+              <li><i class="check">✓</i> Invoicing available for schools</li>
+              <li><i class="check">✓</i> Priority support</li>
+            </ul>
+
+            <div style="font-size:0.78rem;color:var(--text-muted);padding:0.75rem;background:rgba(0,0,0,0.2);border-radius:8px;margin-top:0.75rem;line-height:1.6;">
+              <strong style="color:var(--text);">Example:</strong> 100 students = first 50 × £1.99 + next 50 × £1.50 = <strong style="color:var(--cyan);">£174.50/month</strong>, includes <strong style="color:var(--purple-light);">3 free teacher accounts</strong>
+            </div>
+          </div>
+
+          <!-- Right: calculator + CTAs -->
+          <div>
+            <div class="calculator">
+              <div class="calculator-label">How many students?</div>
+              <div class="calc-input-row">
+                <button class="calc-btn" id="calcMinus" aria-label="Decrease">−</button>
+                <input type="number" class="calc-input" id="calcInput" value="50" min="30" max="500" aria-label="Number of students">
+                <button class="calc-btn" id="calcPlus" aria-label="Increase">+</button>
+              </div>
+              <input type="range" class="calc-slider" id="calcSlider" min="30" max="500" value="50" aria-label="Student count slider">
+              <div class="calc-result" id="calcResult">
+                <div class="calc-result-main" id="calcPrice">£99.50/month</div>
+                <div class="calc-result-detail" id="calcDetail">50 students · <span class="highlight">1 free teacher account</span> included</div>
+              </div>
+            </div>
+
+            <div class="school-ctas">
+              <a href="mailto:info@redfrogblackart.com?subject=School%20plan%20enquiry%20%E2%80%94%20OmniModi&body=Hi%2C%0A%0AI%27d%20like%20to%20find%20out%20more%20about%20the%20OmniModi%20school%20plan.%0A%0ASchool%20name%3A%0ANumber%20of%20students%3A%0AYear%20groups%3A%0AContact%20name%3A%0A" class="btn-school-primary" id="requestQuoteBtn">
+                Request a quote →
+              </a>
+              <a href="index.html#demo" class="btn-school-secondary" id="schoolStartBtn">
+                Request a school demo →
+              </a>
+            </div>
+            <p class="school-min-note">Minimum 30 students · from £59.70/month<br>Invoicing available · cancel with 30 days' notice</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="pricingsection" id="faq">
+    <div class="container">
+      <div class="pricingsection-header fade-in">
+        <h2>Frequently asked questions</h2>
+        <p>Still not sure? We've answered the most common ones here.</p>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="faq-grid fade-in">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Is there a free trial?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes — use code <code>TRIAL</code> at signup for <strong>14 days of full access</strong>, completely free. No payment details required. If you're an existing user whose family wants free access, use code <code>FAMILY</code> instead.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do you charge VAT?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <strong>No.</strong> OmniModi is operated by <strong>REDFROGBLACK LIMITED</strong>, which is not VAT registered. All prices shown — £3.99/month, £1.99/student, etc. — are the final amount you pay. There is no VAT to add.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I cancel anytime?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. Individual plans can be cancelled at any time from your account settings — no questions asked, no fees. School plans require 30 days' notice. You keep access until the end of your billing period.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Does the school plan include teacher accounts?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes — <strong>1 free teacher account is included per 30 students</strong>, automatically calculated. For example: 60 students = 2 free teacher accounts; 100 students = 3 free teacher accounts. Additional teacher accounts can be added at the standard £3.99/month rate.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What subjects are covered?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <strong>13 subjects</strong> are currently available: Biology, Chemistry, Physics, Combined Science, Maths, Computer Science, English Language, English Literature, Geography, History, Food Technology, Art &amp; Design, and Sport Studies. More subjects are being added regularly.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Which exam board do you cover?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              All 3,500+ questions are aligned to the GCSE specifications published by the Department for Education and Assessment Regulator. Questions cross-reference the major UK exam boards (SPEC_A, SPEC_B, SPEC_C, Specification E) where applicable.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can parents see their child's progress?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. Students share a <strong>6-character code</strong> with their parent, who uses it to link accounts. Once linked, the parent's dashboard shows each child's progress, weak areas, streaks, and recent quiz results in real time. Up to 5 children can be linked to one parent account.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What is the minimum for the school plan?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              The minimum is <strong>30 students</strong>. At the standard rate that's £59.70/month (30 × £1.99), which includes 1 free teacher account. For fewer than 30 students, the individual Teacher plan at £3.99/month is the best option.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <div class="pricing-cta-strip">
+    <div class="container">
+      <h2 class="fade-in">Ready to get started?</h2>
+      <p class="fade-in">Join students, parents and teachers already using OmniModi.</p>
+      <div class="pricing-cta-buttons fade-in">
+        <a href="index.html#demo" class="btn-primary btn-large">Request a demo →</a>
+        <a href="mailto:info@redfrogblackart.com?subject=School%20plan%20enquiry%20%E2%80%94%20OmniModi" class="btn-ghost">School enquiry ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+    <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/brand/redfrogblack-logo.png" alt="REDFROGBLACK LIMITED studio logo" width="200" height="96" class="footer-brand-logo" loading="lazy">
+        <p class="footer-made">
+          Made with
+          <svg class="footer-frog" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 12a8 8 0 0 1 16 0v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/>
+            <circle cx="9" cy="11" r="1.3" fill="currentColor"/>
+            <circle cx="15" cy="11" r="1.3" fill="currentColor"/>
+            <path d="M9 15c1 1 2 1.4 3 1.4S13.9 16 15 15"/>
+          </svg>
+          by <strong>RedFrogBlack</strong>
+        </p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Learn</h4>
+          <ul>
+            <li><a href="index.html#how">How it works</a></li>
+            <li><a href="index.html#tutors">Tutor frogs</a></li>
+            <li><a href="index.html#subjects">Subjects</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Modules</h4>
+          <ul>
+            <li><a href="index.html#features">Student modules</a></li>
+            <li><a href="index.html#roadmap">Coming soon</a></li>
+            <li><a href="index.html#demo">Request a demo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="https://redfrogblackart.com" rel="noopener" target="_blank">About RedFrogBlack</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:hello@omnimodi.com">hello@omnimodi.com</a></li>
+            <li><a href="mailto:support@omnimodi.com">support@omnimodi.com</a></li>
+            <li><a href="index.html#demo">Demo access</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-legal-row">
+      <p class="footer-copy">&copy; <span class="year">2026</span> REDFROGBLACK LIMITED. All rights reserved.</p>
+      <p class="footer-tag">OmniModi&trade;. Every learner. Every exam. Every way of learning.</p>
+    </div>
+    <div class="container footer-legal-fine">
+      <p>Operated by REDFROGBLACK LIMITED (Company No. 16557982), registered in England and Wales. Registered address: Unit 13 Freeland Park, Wareham Road, Lytchett Matravers, Poole, England, BH16 6FA. OmniModi is an independent GCSE revision tool and is not affiliated with or endorsed by any UK exam board.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // ===== SCROLL ANIMATIONS =====
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Nav always scrolled on pricing page
+    document.getElementById('nav').classList.add('scrolled');
+
+    // ===== CALCULATOR =====
+    function calcCost(n) {
+      n = Math.max(30, Math.min(500, Math.round(n)));
+      let cost = 0;
+      if (n <= 50) {
+        cost = n * 1.99;
+      } else if (n <= 150) {
+        cost = 50 * 1.99 + (n - 50) * 1.50;
+      } else {
+        cost = 50 * 1.99 + 100 * 1.50 + (n - 150) * 1.10;
+      }
+      const teacherAccounts = Math.floor(n / 30);
+      return { cost: cost.toFixed(2), teachers: teacherAccounts, students: n };
+    }
+
+    function updateCalc(val) {
+      const n = Math.max(30, Math.min(500, parseInt(val) || 30));
+      const input = document.getElementById('calcInput');
+      const slider = document.getElementById('calcSlider');
+      const priceEl = document.getElementById('calcPrice');
+      const detailEl = document.getElementById('calcDetail');
+      const quoteBtn = document.getElementById('requestQuoteBtn');
+      const startBtn = document.getElementById('schoolStartBtn');
+
+      input.value = n;
+      slider.value = n;
+
+      const { cost, teachers, students } = calcCost(n);
+
+      priceEl.textContent = '£' + cost + '/month';
+      const teacherText = teachers === 1 ? '1 free teacher account' : teachers + ' free teacher accounts';
+      detailEl.innerHTML = students + ' students · <span class="highlight">' + teacherText + '</span> included';
+
+      // Update small school button visibility
+      if (n <= 50) {
+        startBtn.style.display = 'block';
+      } else {
+        startBtn.style.display = 'none';
+      }
+
+      // Pre-fill quote email with student count
+      quoteBtn.href = 'mailto:info@redfrogblackart.com?subject=School%20plan%20enquiry%20%E2%80%94%20' + n + '%20students%20%E2%80%94%20OmniModi&body=Hi%2C%0A%0AI%27d%20like%20to%20find%20out%20more%20about%20the%20OmniModi%20school%20plan.%0A%0ASchool%20name%3A%0ANumber%20of%20students%3A%20' + n + '%0AYear%20groups%3A%0AContact%20name%3A%0A';
+    }
+
+    document.getElementById('calcInput').addEventListener('input', e => updateCalc(e.target.value));
+    document.getElementById('calcInput').addEventListener('change', e => updateCalc(e.target.value));
+    document.getElementById('calcSlider').addEventListener('input', e => updateCalc(e.target.value));
+    document.getElementById('calcMinus').addEventListener('click', () => {
+      const cur = parseInt(document.getElementById('calcInput').value) || 30;
+      updateCalc(Math.max(30, cur - 5));
+    });
+    document.getElementById('calcPlus').addEventListener('click', () => {
+      const cur = parseInt(document.getElementById('calcInput').value) || 30;
+      updateCalc(Math.min(500, cur + 5));
+    });
+
+    // Init
+    updateCalc(50);
+
+    // ===== FAQ ACCORDION =====
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        // Collapse all
+        document.querySelectorAll('.faq-question').forEach(b => {
+          b.setAttribute('aria-expanded', 'false');
+          b.nextElementSibling.classList.remove('open');
+        });
+        // Expand clicked (if it was closed)
+        if (!expanded) {
+          btn.setAttribute('aria-expanded', 'true');
+          btn.nextElementSibling.classList.add('open');
+        }
+      });
+    });
+  </script>
+
+  <script>
+    // Auto-update copyright year in all footers
+    document.querySelectorAll('.year').forEach(function(el){ el.textContent = new Date().getFullYear(); });
+  </script>
+</body>
+</html>

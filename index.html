@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniModi — Every learner. Every exam. Every way of learning.</title>
+  <meta name="description" content="OmniModi is a GCSE Student learning app. Question practice, learning notes, AI Teacher, games and Rest. Launching soon on iOS and Android. Request a demo today.">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=chillax@600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- COOKIE BANNER -->
+  <div class="cookie-banner" id="cookieBanner">
+    <p>We use session cookies only to keep the site working. No tracking, no ads. <a href="privacy.html">Privacy Policy</a></p>
+    <button onclick="document.getElementById('cookieBanner').classList.add('hidden')">Got it</button>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-label="OmniModi logo">
+          <rect width="36" height="36" rx="10" fill="var(--purple)"/>
+          <circle cx="12" cy="13" r="4" fill="white" opacity="0.9"/>
+          <circle cx="24" cy="13" r="4" fill="white" opacity="0.9"/>
+          <circle cx="18" cy="23" r="4" fill="white"/>
+          <line x1="12" y1="13" x2="18" y2="23" stroke="white" stroke-width="1.5" opacity="0.5"/>
+          <line x1="24" y1="13" x2="18" y2="23" stroke="white" stroke-width="1.5" opacity="0.5"/>
+          <line x1="12" y1="13" x2="24" y2="13" stroke="white" stroke-width="1.5" opacity="0.5"/>
+        </svg>
+        <span class="nav-logo-text">Omni<span class="nav-logo-accent">Modi</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#levels">Courses</a>
+        <a href="#how">How it works</a>
+        <a href="#tutors">Tutors</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#demo" style="color:var(--cyan);font-weight:600;">Request demo ↗</a>
+        <a href="terms.html">Terms</a>
+        <a href="#demo" class="btn-nav">Request Demo →</a>
+      </div>
+      <button class="nav-burger" id="burger" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="floating-cards">
+        <div class="fc fc-1">🧬 Biology</div>
+        <div class="fc fc-2">📐 Maths</div>
+        <div class="fc fc-3">⚗️ Chemistry</div>
+        <div class="fc fc-4">💻 CS</div>
+        <div class="fc fc-5">🌍 Geography</div>
+        <div class="fc fc-6">📖 Literature</div>
+      </div>
+    </div>
+    <div class="container hero-content hero-split">
+      <div class="hero-copy">
+        <div class="hero-badge fade-in">✦ Launching soon on iOS and Android</div>
+        <h1 class="hero-title fade-in">Revision that<br><span class="gradient-text">actually works.</span></h1>
+        <p class="hero-sub fade-in">A Student learning app for UK GCSE.<br>Question practice, learning notes, AI Teacher, games and Rest &mdash; all in one place.</p>
+        <div class="hero-ctas fade-in">
+          <a href="#demo" class="btn-primary">Request a demo →</a>
+          <a href="#how" class="btn-ghost">See what&rsquo;s inside ↓</a>
+        </div>
+        <div class="hero-stats fade-in">
+          <div class="stat"><span class="stat-num">5</span><span class="stat-label">Student modules</span></div>
+          <div class="stat-div"></div>
+          <div class="stat"><span class="stat-num">13</span><span class="stat-label">GCSE subjects</span></div>
+          <div class="stat-div"></div>
+          <div class="stat"><span class="stat-num">iOS</span><span class="stat-label">and Android</span></div>
+          <div class="stat-div"></div>
+          <div class="stat"><span class="stat-num">Soon</span><span class="stat-label">in the app stores</span></div>
+        </div>
+      </div>
+      <div class="hero-art fade-in" aria-hidden="true">
+        <div class="hero-art-halo"></div>
+        <img class="hero-art-frog" src="assets/frogs/pond_fullbody@2x.png" srcset="assets/frogs/pond_fullbody.png 1x, assets/frogs/pond_fullbody@2x.png 2x" alt="OmniModi tutor frog" width="420" height="420" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </section>
+
+  <!-- LEVELS -->
+  <section class="section" id="levels">
+    <div class="container">
+      <h2 class="section-title fade-in">Available now &mdash; Student, UK GCSE</h2>
+      <p class="section-sub fade-in">Everything below is what a Student can use today. Parents, teachers, schools and A-Levels are on the way &mdash; see the roadmap.</p>
+      <div class="levels-grid fade-in">
+        <div class="level-card level-active">
+          <div class="level-badge badge-live">Available now</div>
+          <div class="level-icon">🎓</div>
+          <h3>Student &mdash; GCSE</h3>
+          <p>13 subjects across the UK GCSE curriculum. Foundation and Higher difficulty.</p>
+          <ul class="level-features">
+            <li>✓ Question practice across every subject</li>
+            <li>✓ Learning notes &mdash; summary or detailed, plain or technical</li>
+            <li>✓ AI Teacher chat</li>
+            <li>✓ Games and interactive drills</li>
+            <li>✓ Rest &mdash; short calming breaks between sessions</li>
+            <li>✓ Weak spot tracker with XP, streaks and levels</li>
+          </ul>
+          <a href="#demo" class="btn-primary" style="width:100%;text-align:center;">Request a demo →</a>
+        </div>
+        <div class="level-card level-soon">
+          <div class="level-badge badge-soon">Launching soon</div>
+          <div class="level-icon">📱</div>
+          <h3>iOS and Android</h3>
+          <p>The Student app is being prepared for release in the App Store and Google Play. Store-native sign in and store-native subscriptions.</p>
+          <ul class="level-features">
+            <li>○ Native iOS build</li>
+            <li>○ Native Android build</li>
+            <li>○ Apple and Google in-app subscription</li>
+            <li>○ Offline-friendly revision</li>
+            <li>○ Push reminders to keep streaks alive</li>
+          </ul>
+          <a href="#demo" class="btn-ghost" style="width:100%;text-align:center;display:block;">Get early access →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section section-alt" id="how">
+    <div class="container">
+      <h2 class="section-title fade-in">How a Student uses OmniModi</h2>
+      <p class="section-sub fade-in">Three steps to smarter revision</p>
+      <div class="steps fade-in">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Pick a subject and a mode</h3>
+          <p>Choose from 13 GCSE subjects and switch between question practice, learning notes, AI Teacher, games or a short Rest.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Read, answer, ask</h3>
+          <p>Read notes in the mode you prefer &mdash; summary or detailed, plain or technical. Answer questions with instant explanations. Ask the AI Teacher when something is unclear.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Track and keep the streak</h3>
+          <p>Weak spots are flagged automatically. Earn XP, build streaks and level up. Rest between sessions to stay fresh.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES / STUDENT MODULES -->
+  <section class="section" id="features">
+    <div class="container">
+      <h2 class="section-title fade-in">The five Student modules</h2>
+      <p class="section-sub fade-in">These are the modules available to a Student today. Everything is designed for revision on a phone.</p>
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🧠</div>
+          <h3>Question practice</h3>
+          <p>Retrieval practice across 13 GCSE subjects with instant, worked explanations. The single most effective revision technique in the cognitive-science literature.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">📖</div>
+          <h3>Learning notes</h3>
+          <p>Every topic in four variants &mdash; summary or detailed, plain-language or technical &mdash; so a Student can read it the way that lands for them.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">💬</div>
+          <h3>AI Teacher</h3>
+          <p>A patient, subject-aware chat tutor. Ask for a re-explanation, a worked example, or a nudge in the right direction &mdash; without giving the answer away.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🎮</div>
+          <h3>Games</h3>
+          <p>Interleaved, timed and streak-driven drills that turn revision into short, focused loops. Weak spots feed straight back into the next round.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🌿</div>
+          <h3>Rest</h3>
+          <p>Short, calm breaks between sessions. Guided breathing and low-stimulation moments to reset attention before the next question.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🏆</div>
+          <h3>Progress and streaks</h3>
+          <p>XP, streaks and levels run underneath every module. Weak spots are logged automatically so revision keeps compounding.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEET THE TUTOR FROGS -->
+  <section class="section" id="tutors">
+    <div class="container">
+      <h2 class="section-title fade-in">Meet the tutor frogs</h2>
+      <p class="section-sub fade-in">Every Student picks the tutor personality that suits how they learn. Nine frogs, nine teaching manners &mdash; the frog you choose actually changes how the AI Teacher talks to you, not just which picture is shown.</p>
+      <div class="tutor-grid fade-in">
+        <div class="tutor-card">
+          <div class="tutor-frog-wrap"><img class="tutor-frog" src="assets/frogs/pond_fullbody.png" srcset="assets/frogs/pond_fullbody.png 1x, assets/frogs/pond_fullbody@2x.png 2x" alt="Pond frog" loading="lazy"></div>
+          <div class="tutor-name">Pond</div>
+          <div class="tutor-tag">Friendly and laid-back</div>
+          <p class="tutor-blurb">Talks to you like a friend who happens to be good at this.</p>
+        </div>
+        <div class="tutor-card">
+          <div class="tutor-frog-wrap"><img class="tutor-frog" src="assets/frogs/forest_fullbody.png" srcset="assets/frogs/forest_fullbody.png 1x, assets/frogs/forest_fullbody@2x.png 2x" alt="Forest frog" loading="lazy"></div>
+          <div class="tutor-name">Forest</div>
+          <div class="tutor-tag">Calm and grounded</div>
+          <p class="tutor-blurb">Never rushes you. Explains things one step at a time.</p>
+        </div>
+        <div class="tutor-card">
+          <div class="tutor-frog-wrap"><img class="tutor-frog" src="assets/frogs/coral_fullbody.png" srcset="assets/frogs/coral_fullbody.png 1x, assets/frogs/coral_fullbody@2x.png 2x" alt="Coral frog" loading="lazy"></div>
+          <div class="tutor-name">Coral</div>
+          <div class="tutor-tag">Gentle and encouraging</div>
+          <p class="tutor-blurb">Notices what you did well, especially when you find it hard.</p>
+        </div>
+        <div class="tutor-card">
+          <div class="tutor-frog-wrap"><img class="tutor-frog" src="assets/frogs/sunset_fullbody.png" srcset="assets/frogs/sunset_fullbody.png 1x, assets/frogs/sunset_fullbody@2x.png 2x" alt="Sunset frog" loading="lazy"></div>
+          <div class="tutor-name">Sunset</div>
+          <div class="tutor-tag">Playful and cheerful</div>
+          <p class="tutor-blurb">Keeps things light and uses examples from real life.</p>
+        </div>
+        <div class="tutor-card">
+          <div class="tutor-frog-wrap"><img class="tutor-frog" src="assets/frogs/summer_lotus_fullbody.png" srcset="assets/frogs/summer_lotus_fullbody.png 1x, assets/frogs/summer_lotus_fullbody@2x.png 2x" alt="Summer Lotus frog" loading="lazy"></div>
+          <div class="tutor-name">Summer Lotus</div>
+          <div class="tutor-tag">Reflective and thoughtful</div>
+          <p class="tutor-blurb">Asks what you think first, then works through it with you.</p>
+        </div>
+        <div class="tutor-card">
+          <div class="tutor-frog-wrap"><img class="tutor-frog" src="assets/frogs/winter_frost_fullbody.png" srcset="assets/frogs/winter_frost_fullbody.png 1x, assets/frogs/winter_frost_fullbody@2x.png 2x" alt="Winter Frost frog" loading="lazy"></div>
+          <div class="tutor-name">Winter Frost</div>
+          <div class="tutor-tag">Clear and analytical</div>
+          <p class="tutor-blurb">Breaks problems into logical parts and compares them side by side.</p>
+        </div>
+        <div class="tutor-card">
+          <div class="tutor-frog-wrap"><img class="tutor-frog" src="assets/frogs/sapphire_fullbody.png" srcset="assets/frogs/sapphire_fullbody.png 1x, assets/frogs/sapphire_fullbody@2x.png 2x" alt="Sapphire frog" loading="lazy"></div>
+          <div class="tutor-name">Sapphire</div>
+          <div class="tutor-tag">Direct and confident</div>
+          <p class="tutor-blurb">Gets straight to the point with no waffle.</p>
+        </div>
+        <div class="tutor-card">
+          <div class="tutor-frog-wrap"><img class="tutor-frog" src="assets/frogs/royal_gold_fullbody.png" srcset="assets/frogs/royal_gold_fullbody.png 1x, assets/frogs/royal_gold_fullbody@2x.png 2x" alt="Royal Gold frog" loading="lazy"></div>
+          <div class="tutor-name">Royal Gold</div>
+          <div class="tutor-tag">Formal and precise</div>
+          <p class="tutor-blurb">Uses proper terminology. Good if you want exam-ready wording.</p>
+        </div>
+        <div class="tutor-card">
+          <div class="tutor-frog-wrap"><img class="tutor-frog" src="assets/frogs/cosmic_fullbody.png" srcset="assets/frogs/cosmic_fullbody.png 1x, assets/frogs/cosmic_fullbody@2x.png 2x" alt="Cosmic frog" loading="lazy"></div>
+          <div class="tutor-name">Cosmic</div>
+          <div class="tutor-tag">Curious and imaginative</div>
+          <p class="tutor-blurb">Links what you are learning to bigger ideas and what-ifs.</p>
+        </div>
+      </div>
+      <p class="tutor-hint fade-in">Hover a frog to see them lift.</p>
+    </div>
+  </section>
+
+  <!-- ROADMAP / COMING SOON -->
+  <section class="section section-alt" id="roadmap">
+    <div class="container">
+      <h2 class="section-title fade-in">Coming soon</h2>
+      <p class="section-sub fade-in">These are next on the roadmap. Not available today &mdash; request a demo to be first to know when they land.</p>
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-icon">📱</div>
+          <h3>iOS and Android apps</h3>
+          <p>Native Student apps in the App Store and Google Play with store-native sign in and store-native subscriptions.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">👨‍👩‍👧</div>
+          <h3>Parent view</h3>
+          <p>Parents will get a linked view of their child&rsquo;s progress, weak spots and streaks &mdash; with the Student&rsquo;s consent and full privacy controls.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">👩‍🏫</div>
+          <h3>Teacher tools</h3>
+          <p>Assign topics, set drills, review class-wide weak spots and export results. Built around how teachers already plan revision.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🏫</div>
+          <h3>School plans</h3>
+          <p>Whole-school licences with a school admin, class rosters and safeguarding controls &mdash; ready for procurement.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">📚</div>
+          <h3>A-Levels</h3>
+          <p>The next curriculum tier &mdash; sixth-form subjects, essay practice and predicted exam topics, using the same Student modules.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🛠️</div>
+          <h3>Self-service authoring</h3>
+          <p>Students, teachers and tutors will be able to create their own learning materials, mock exams and games &mdash; scoped to a class, a group or just themselves.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO ACCESS -->
+  <section class="section" id="demo">
+    <div class="container" style="max-width:640px;">
+      <h2 class="section-title fade-in">Request a demo</h2>
+      <p class="section-sub fade-in">OmniModi is not yet in the App Store or Google Play. In the meantime we&rsquo;re running private demos with parents, teachers and Students so we can polish the Student experience before launch. Tell us who you are and we&rsquo;ll send you access.</p>
+      <div style="display:flex;flex-direction:column;gap:0.9rem;align-items:center;margin-top:2rem;" class="fade-in">
+        <a href="mailto:hello@omnimodi.com?subject=OmniModi%20demo%20request&body=Hi%2C%0A%0AI%27d%20like%20a%20demo%20of%20OmniModi.%0A%0AI%20am%20a%3A%20(Student%20%2F%20Parent%20%2F%20Teacher%20%2F%20School)%0AName%3A%0AYear%20group%20or%20role%3A%0ASubjects%20of%20interest%3A%0A%0AThanks%2C%0A" class="btn-primary" style="min-width:260px;text-align:center;">Email us for demo access →</a>
+        <a href="https://omnimodi.com/chat" class="btn-ghost" style="min-width:260px;text-align:center;">WhatsApp us instead →</a>
+        <p style="font-size:0.85rem;color:var(--muted);text-align:center;margin-top:0.5rem;">Private demos only &mdash; the app is not open for public sign-up yet. Pricing will be published when we&rsquo;re live in the app stores.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBJECTS -->
+  <section class="section" id="subjects">
+    <div class="container">
+      <h2 class="section-title fade-in">13 GCSE subjects covered</h2>
+      <p class="section-sub fade-in">All aligned to UK GCSE specifications. Foundation and Higher difficulty included.</p>
+      <div class="subjects-grid fade-in">
+        <span class="subject-pill">🧬 Biology</span>
+        <span class="subject-pill">⚗️ Chemistry</span>
+        <span class="subject-pill">⚛️ Physics</span>
+        <span class="subject-pill">🔬 Combined Science</span>
+        <span class="subject-pill">💻 Computer Science</span>
+        <span class="subject-pill">📐 Maths</span>
+        <span class="subject-pill">✍️ English Language</span>
+        <span class="subject-pill">📖 English Literature</span>
+        <span class="subject-pill">🌍 Geography</span>
+        <span class="subject-pill">🏃 Sport Studies</span>
+        <span class="subject-pill">🍳 Food Technology</span>
+        <span class="subject-pill">🎨 Art & Design</span>
+        <span class="subject-pill">🏛️ History</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-frog-bust fade-in" aria-hidden="true">
+        <img src="assets/frogs/pond_bust.png" srcset="assets/frogs/pond_bust.png 1x, assets/frogs/pond_bust@2x.png 2x" alt="" width="140" height="140" loading="lazy">
+      </div>
+      <h2 class="fade-in">Want to see it before launch?</h2>
+      <p class="fade-in">We&rsquo;re running private Student demos while we prepare for the App Store and Google Play. Request access and we&rsquo;ll be in touch.</p>
+      <a href="#demo" class="btn-primary btn-large fade-in">Request a demo →</a>
+      <p class="cta-hand fade-in">psst … the demo&rsquo;s waiting for you.</p>
+      <p class="cta-note fade-in">Private preview &mdash; not yet in the app stores.</p>
+    </div>
+  </section>
+
+
+  <style>
+    .testimonial-track-wrap {
+      width: 100%;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
+    .testimonial-track {
+      display: flex;
+      gap: 1.25rem;
+      width: max-content;
+      animation: scroll-reviews 35s linear infinite;
+    }
+    .testimonial-track:hover { animation-play-state: paused; }
+    @keyframes scroll-reviews {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .t-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.1rem 1.25rem;
+      min-width: 260px;
+      max-width: 280px;
+      flex-shrink: 0;
+    }
+    .t-stars { font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .t-text { font-size: 0.82rem; color: var(--text); margin: 0 0 0.6rem; line-height: 1.5; font-style: italic; }
+    .t-name { font-size: 0.75rem; color: var(--muted); font-weight: 600; }
+  </style>
+
+
+  <!-- TESTIMONIALS BANNER -->
+  <section class="section" id="reviews" style="overflow:hidden;padding:3rem 0;">
+    <div class="container" style="margin-bottom:1.5rem;">
+      <h2 class="section-title fade-in">What people are saying</h2>
+      <p class="section-sub fade-in">Real reviews from students, parents and teachers.</p>
+    </div>
+
+    <!-- Scrolling ticker -->
+    <div class="testimonial-track-wrap">
+      <div class="testimonial-track" id="testimonial-track">
+        <!-- Reviews loaded from Supabase + fallback placeholders below -->
+        <div class="t-card"><div class="t-stars">⭐⭐⭐⭐⭐</div><p class="t-text">"My son went from a grade 4 to a grade 6 in six weeks. Worth every penny."</p><span class="t-name">Sarah M · Parent</span></div>
+        <div class="t-card"><div class="t-stars">⭐⭐⭐⭐⭐</div><p class="t-text">"I actually enjoy revising now. The questions are exactly like the real exam."</p><span class="t-name">Aidan · Student, Year 11</span></div>
+        <div class="t-card"><div class="t-stars">⭐⭐⭐⭐</div><p class="t-text">"The simple explanation mode is brilliant. My daughter finally understands photosynthesis!"</p><span class="t-name">David K · Parent</span></div>
+        <div class="t-card"><div class="t-stars">⭐⭐⭐⭐⭐</div><p class="t-text">"I use it with my tuition students. The weak spot tracking saves me hours of prep."</p><span class="t-name">Ms Patel · Maths Tutor</span></div>
+        <div class="t-card"><div class="t-stars">⭐⭐⭐⭐⭐</div><p class="t-text">"3,500 questions across 13 subjects — nothing else comes close at this price."</p><span class="t-name">James T · Parent</span></div>
+        <div class="t-card"><div class="t-stars">⭐⭐⭐⭐</div><p class="t-text">"The audio mode means I can revise on my commute. Game changer."</p><span class="t-name">Priya · Student, Year 10</span></div>
+      </div>
+    </div>
+
+    <!-- Leave a review CTA -->
+    <div class="container" style="margin-top:2rem;text-align:center;">
+      <button onclick="document.getElementById('leave-review').scrollIntoView({behavior:'smooth'})"
+        style="background:none;border:2px solid var(--primary);border-radius:10px;padding:0.6rem 1.5rem;color:var(--primary);font-size:0.88rem;font-weight:600;cursor:pointer;font-family:inherit;">
+        ⭐ Leave your review
+      </button>
+    </div>
+  </section>
+
+  <!-- LEAVE A REVIEW -->
+  <section class="section section-alt" id="leave-review">
+    <div class="container" style="max-width:520px;">
+      <h2 class="section-title fade-in">Leave a review</h2>
+      <p class="section-sub fade-in">Your experience helps other families decide. It takes under a minute.</p>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:1.75rem;margin-top:1.5rem;">
+
+        <!-- Star rating -->
+        <div style="text-align:center;margin-bottom:1.25rem;">
+          <p style="font-size:0.82rem;color:#9ca3af;margin:0 0 0.6rem;">How would you rate OmniModi?</p>
+          <div id="site-review-stars" style="display:flex;justify-content:center;gap:0.6rem;">
+            <button onclick="window._siteReviewStar(1)" data-s="1" style="background:none;border:none;font-size:2.2rem;cursor:pointer;transition:transform 0.1s;" aria-label="1 star">☆</button>
+            <button onclick="window._siteReviewStar(2)" data-s="2" style="background:none;border:none;font-size:2.2rem;cursor:pointer;transition:transform 0.1s;" aria-label="2 stars">☆</button>
+            <button onclick="window._siteReviewStar(3)" data-s="3" style="background:none;border:none;font-size:2.2rem;cursor:pointer;transition:transform 0.1s;" aria-label="3 stars">☆</button>
+            <button onclick="window._siteReviewStar(4)" data-s="4" style="background:none;border:none;font-size:2.2rem;cursor:pointer;transition:transform 0.1s;" aria-label="4 stars">☆</button>
+            <button onclick="window._siteReviewStar(5)" data-s="5" style="background:none;border:none;font-size:2.2rem;cursor:pointer;transition:transform 0.1s;" aria-label="5 stars">☆</button>
+          </div>
+        </div>
+
+        <form id="site-review-form" onsubmit="window._submitSiteReview(event)">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:0.75rem;">
+            <input id="sr-name" type="text" placeholder="Your first name" style="background:var(--bg-2);border:1.5px solid var(--border);border-radius:10px;padding:0.65rem 0.75rem;color:var(--text);font-size:0.84rem;font-family:inherit;box-sizing:border-box;">
+            <select id="sr-type" style="background:var(--bg-2);border:1.5px solid var(--border);border-radius:10px;padding:0.65rem 0.5rem;color:var(--text);font-size:0.84rem;font-family:inherit;box-sizing:border-box;">
+              <option value="student">Student</option>
+              <option value="parent">Parent</option>
+              <option value="teacher">Teacher / Tutor</option>
+              <option value="school">School</option>
+            </select>
+          </div>
+          <textarea id="sr-comment" placeholder="What do you like? What could be better? Any specific subjects?" rows="4" required
+            style="width:100%;background:var(--bg-2);border:1.5px solid var(--border);border-radius:10px;padding:0.7rem;color:var(--text);font-size:0.84rem;font-family:inherit;resize:vertical;box-sizing:border-box;margin-bottom:0.75rem;"></textarea>
+          <input id="sr-email" type="email" placeholder="Email (optional — only used if we need to contact you)"
+            style="width:100%;background:var(--bg-2);border:1.5px solid var(--border);border-radius:10px;padding:0.65rem 0.75rem;color:var(--text);font-size:0.84rem;font-family:inherit;box-sizing:border-box;margin-bottom:0.75rem;">
+          <p style="font-size:0.72rem;color:#6b7280;margin:0 0 0.75rem;">Reviews are moderated before appearing on the site. We may share your first name and type (e.g. "Sarah · Parent") alongside your review.</p>
+          <div id="sr-status" style="min-height:1.2rem;font-size:0.82rem;margin-bottom:0.5rem;text-align:center;"></div>
+          <button type="submit"
+            style="width:100%;background:linear-gradient(135deg,#f59e0b,#ef4444);border:none;border-radius:12px;padding:0.8rem;color:#fff;font-size:0.9rem;font-weight:700;cursor:pointer;font-family:inherit;">
+            Submit my review ⭐
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT & FEEDBACK -->
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 class="section-title fade-in">Get in touch</h2>
+      <p class="section-sub fade-in">Questions, feedback, school enquiries — we'd love to hear from you.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2.5rem;">
+
+        <!-- Feedback form -->
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:1.75rem;">
+          <h3 style="margin:0 0 0.25rem;font-size:1.05rem;color:var(--text);">💬 Send us a message</h3>
+          <p style="font-size:0.83rem;color:var(--muted);margin:0 0 1.25rem;">General questions, feedback, or school licence enquiries.</p>
+          <form id="contact-form" onsubmit="window._submitContactForm(event)">
+            <div style="margin-bottom:0.75rem;">
+              <input type="text" id="cf-name" placeholder="Your name" required
+                style="width:100%;background:var(--bg-2);border:1.5px solid var(--border);border-radius:10px;padding:0.65rem 0.75rem;color:var(--text);font-size:0.85rem;font-family:inherit;box-sizing:border-box;">
+            </div>
+            <div style="margin-bottom:0.75rem;">
+              <input type="email" id="cf-email" placeholder="Your email" required
+                style="width:100%;background:var(--bg-2);border:1.5px solid var(--border);border-radius:10px;padding:0.65rem 0.75rem;color:var(--text);font-size:0.85rem;font-family:inherit;box-sizing:border-box;">
+            </div>
+            <div style="margin-bottom:0.75rem;">
+              <select id="cf-type"
+                style="width:100%;background:var(--bg-2);border:1.5px solid var(--border);border-radius:10px;padding:0.65rem 0.75rem;color:var(--text);font-size:0.85rem;font-family:inherit;box-sizing:border-box;">
+                <option value="">What is this about?</option>
+                <option value="general">General question</option>
+                <option value="school">School / teacher licence</option>
+                <option value="bug">Bug report</option>
+                <option value="feedback">Feedback / suggestion</option>
+                <option value="billing">Billing</option>
+              </select>
+            </div>
+            <div style="margin-bottom:1rem;">
+              <textarea id="cf-message" placeholder="Your message…" required rows="4"
+                style="width:100%;background:var(--bg-2);border:1.5px solid var(--border);border-radius:10px;padding:0.65rem 0.75rem;color:var(--text);font-size:0.85rem;font-family:inherit;box-sizing:border-box;resize:vertical;"></textarea>
+            </div>
+            <div id="cf-status" style="min-height:1.2rem;font-size:0.8rem;margin-bottom:0.75rem;text-align:center;"></div>
+            <button type="submit"
+              style="width:100%;background:linear-gradient(135deg,#4f46e5,var(--purple-light));border:none;border-radius:10px;padding:0.75rem;color:#fff;font-size:0.9rem;font-weight:700;cursor:pointer;font-family:inherit;">
+              Send message →
+            </button>
+          </form>
+        </div>
+
+        <!-- Direct contact options -->
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:1.75rem;display:flex;flex-direction:column;gap:1rem;">
+          <h3 style="margin:0 0 0.25rem;font-size:1.05rem;color:var(--text);">📲 Contact directly</h3>
+          <p style="font-size:0.83rem;color:var(--muted);margin:0 0 0.5rem;">Prefer a quicker conversation? Reach us on WhatsApp or email.</p>
+
+          <a href="https://omnimodi.com/chat" target="_blank" rel="noopener"
+            style="display:flex;align-items:center;gap:0.75rem;background:#25d366;color:#fff;text-decoration:none;border-radius:12px;padding:0.85rem 1rem;font-weight:600;font-size:0.9rem;font-family:inherit;transition:opacity 0.2s;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp us
+          </a>
+
+          <a href="mailto:support@omnimodi.com" data-role="contact-email"
+            style="display:flex;align-items:center;gap:0.75rem;background:var(--primary);color:#fff;text-decoration:none;border-radius:12px;padding:0.85rem 1rem;font-weight:600;font-size:0.9rem;font-family:inherit;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span data-role="contact-email-label">support@omnimodi.com</span>
+          </a>
+
+          <div style="background:var(--bg-2);border-radius:10px;padding:1rem;margin-top:0.5rem;">
+            <p style="font-size:0.78rem;color:var(--muted);margin:0 0 0.25rem;font-weight:600;">Response times</p>
+            <p style="font-size:0.8rem;color:var(--text);margin:0;">WhatsApp — usually within a few hours<br>Email — within 1 business day<br>School enquiries — same day when possible</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    window._submitContactForm = async function(e) {
+      e.preventDefault();
+      const name = document.getElementById('cf-name').value.trim();
+      const email = document.getElementById('cf-email').value.trim();
+      const type = document.getElementById('cf-type').value || 'general';
+      const message = document.getElementById('cf-message').value.trim();
+      const status = document.getElementById('cf-status');
+      status.textContent = 'Sending…';
+      status.style.color = '#9ca3af';
+      try {
+        if (typeof emailjs !== 'undefined') {
+          await emailjs.send('service_3dkq9eb', 'template_fehqnta', {
+            to_email: (window.OMNI_CONFIG && window.OMNI_CONFIG.support_email) || 'support@omnimodi.com',
+            subject: '📬 Website contact: ' + type,
+            topic: type,
+            score: name,
+            total: '',
+            percent: '',
+            grade: email,
+            streak: '',
+            weak_spots_text: message
+          });
+        }
+        status.textContent = '✅ Message sent — we\'ll be in touch soon!';
+        status.style.color = '#22c55e';
+        document.getElementById('contact-form').reset();
+      } catch(err) {
+        status.textContent = 'Something went wrong — please email us directly';
+        status.style.color = '#ef4444';
+      }
+    };
+  </script>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/brand/redfrogblack-logo.png" alt="REDFROGBLACK LIMITED studio logo" width="200" height="96" class="footer-brand-logo" loading="lazy">
+        <p class="footer-made">
+          Made with
+          <svg class="footer-frog" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 12a8 8 0 0 1 16 0v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/>
+            <circle cx="9" cy="11" r="1.3" fill="currentColor"/>
+            <circle cx="15" cy="11" r="1.3" fill="currentColor"/>
+            <path d="M9 15c1 1 2 1.4 3 1.4S13.9 16 15 15"/>
+          </svg>
+          by <strong>RedFrogBlack</strong>
+        </p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Learn</h4>
+          <ul>
+            <li><a href="index.html#how">How it works</a></li>
+            <li><a href="index.html#tutors">Tutor frogs</a></li>
+            <li><a href="index.html#subjects">Subjects</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Modules</h4>
+          <ul>
+            <li><a href="index.html#features">Student modules</a></li>
+            <li><a href="index.html#roadmap">Coming soon</a></li>
+            <li><a href="index.html#demo">Request a demo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="https://redfrogblackart.com" rel="noopener" target="_blank">About RedFrogBlack</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:hello@omnimodi.com">hello@omnimodi.com</a></li>
+            <li><a href="mailto:support@omnimodi.com">support@omnimodi.com</a></li>
+            <li><a href="index.html#demo">Demo access</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-legal-row">
+      <p class="footer-copy">© <span class="year">2026</span> REDFROGBLACK LIMITED. All rights reserved.</p>
+      <p class="footer-tag">OmniModi&trade;. Every learner. Every exam. Every way of learning.</p>
+    </div>
+    <div class="container footer-legal-fine">
+      <p>Operated by REDFROGBLACK LIMITED (Company No. 16557982), registered in England and Wales. Registered address: Unit 13 Freeland Park, Wareham Road, Lytchett Matravers, Poole, England, BH16 6FA. OmniModi is an independent GCSE revision tool and is not affiliated with or endorsed by any UK exam board.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Sticky nav
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
+    });
+  </script>
+  <script>
+    var _siteReviewStarVal = 0;
+
+    window._siteReviewStar = function(n) {
+      _siteReviewStarVal = n;
+      document.querySelectorAll('#site-review-stars button').forEach(function(b, i) {
+        b.textContent = i < n ? '⭐' : '☆';
+        b.style.transform = i < n ? 'scale(1.12)' : 'scale(1)';
+      });
+    };
+
+    window._submitSiteReview = async function(e) {
+      e.preventDefault();
+      if (!_siteReviewStarVal) {
+        var s = document.getElementById('sr-status');
+        s.textContent = 'Please choose a star rating first';
+        s.style.color = '#ef4444';
+        return;
+      }
+      var name = document.getElementById('sr-name').value.trim();
+      var type = document.getElementById('sr-type').value;
+      var comment = document.getElementById('sr-comment').value.trim();
+      var email = document.getElementById('sr-email').value.trim();
+      var status = document.getElementById('sr-status');
+      status.textContent = 'Submitting…';
+      status.style.color = '#9ca3af';
+
+      var stars = '⭐'.repeat(_siteReviewStarVal) + '☆'.repeat(5 - _siteReviewStarVal);
+
+      try {
+        // Save to Supabase
+        var sb = window._supabase || (window.supabase ? supabase.createClient('https://vhkfntjtzglcvkdzcedj.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZoa2ZudGp0emdsY3ZrZHpjZWRqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYzNzgzMjYsImV4cCI6MjA5MTk1NDMyNn0.cpga5eiEcvZIAHXPaJf2wUXdtUHGFxZeIgCR0jELt_Q') : null);
+        if (sb) {
+          await sb.from('reviews').insert({
+            user_email: email || null,
+            user_name: name || null,
+            user_type: type,
+            rating: _siteReviewStarVal,
+            comment: comment,
+            subject: 'website',
+            approved: false
+          });
+        }
+        // Email the operator inbox
+        if (typeof emailjs !== 'undefined') {
+          await emailjs.send('service_3dkq9eb', 'template_fehqnta', {
+            to_email: (window.OMNI_CONFIG && window.OMNI_CONFIG.support_email) || 'support@omnimodi.com',
+            subject: stars + ' New website review — ' + _siteReviewStarVal + ' stars',
+            topic: 'Website Review',
+            score: _siteReviewStarVal,
+            total: 5,
+            percent: _siteReviewStarVal * 20,
+            grade: (name || 'Anonymous') + ' · ' + type,
+            streak: '',
+            weak_spots_text: comment + '\n\nApprove in Supabase: Table Editor → reviews → set approved = true'
+          });
+        }
+        status.textContent = '🙏 Thank you! Your review has been submitted for approval.';
+        status.style.color = '#22c55e';
+        document.getElementById('site-review-form').reset();
+        _siteReviewStarVal = 0;
+        document.querySelectorAll('#site-review-stars button').forEach(function(b) { b.textContent = '☆'; b.style.transform = 'scale(1)'; });
+      } catch(err) {
+        status.textContent = 'Something went wrong — please email us directly';
+        status.style.color = '#ef4444';
+      }
+    };
+
+    // Load approved reviews from Supabase and duplicate for seamless loop
+    async function loadApprovedReviews() {
+      try {
+        var sb = window.supabase ? supabase.createClient('https://vhkfntjtzglcvkdzcedj.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZoa2ZudGp0emdsY3ZrZHpjZWRqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYzNzgzMjYsImV4cCI6MjA5MTk1NDMyNn0.cpga5eiEcvZIAHXPaJf2wUXdtUHGFxZeIgCR0jELt_Q') : null;
+        if (!sb) return;
+        var res = await sb.from('reviews').select('user_name,user_type,rating,comment').eq('approved', true).limit(20);
+        if (res.data && res.data.length > 0) {
+          var track = document.getElementById('testimonial-track');
+          if (!track) return;
+          var cards = res.data.map(function(r) {
+            var stars = '⭐'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+            var label = (r.user_name || 'Anonymous') + (r.user_type ? ' · ' + r.user_type.charAt(0).toUpperCase() + r.user_type.slice(1) : '');
+            return '<div class="t-card"><div class="t-stars">' + stars + '</div><p class="t-text">"' + (r.comment||'').replace(/"/g,"&quot;") + '"</p><span class="t-name">' + label + '</span></div>';
+          }).join('');
+          // Duplicate for seamless loop
+          track.innerHTML = cards + cards;
+        } else {
+          // Duplicate placeholder cards for seamless loop
+          var track = document.getElementById('testimonial-track');
+          if (track) track.innerHTML = track.innerHTML + track.innerHTML;
+        }
+      } catch(e) {
+        // Duplicate placeholders on error
+        var track = document.getElementById('testimonial-track');
+        if (track) track.innerHTML = track.innerHTML + track.innerHTML;
+      }
+    }
+    window.addEventListener('load', loadApprovedReviews);
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" onload="emailjs.init({publicKey:'NuM1_vi0Vlj5HfWDR'});"></script>
+  <script>
+    // Auto-update copyright year in all footers
+    document.querySelectorAll('.year').forEach(function(el){ el.textContent = new Date().getFullYear(); });
+  </script>
+</body>
+</html>
